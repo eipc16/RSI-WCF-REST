@@ -13,38 +13,38 @@ namespace WcfRestService
     {
         [OperationContract]
         [WebGet(
-            UriTemplate = "/books",
+            UriTemplate = "/json/books",
             ResponseFormat = WebMessageFormat.Json)]
         List<BookEntity> getAll();
 
         [OperationContract]
         [WebGet(
-            UriTemplate = "/books/xml",
+            UriTemplate = "/xml/books",
             ResponseFormat = WebMessageFormat.Xml)]
         List<BookEntity> getAllXML();
 
         [OperationContract]
         [WebGet(
-            UriTemplate = "/books/{id}",
+            UriTemplate = "json/books/{id}",
             ResponseFormat = WebMessageFormat.Json)]
         BookEntity getById(string id);
 
         [OperationContract]
         [WebGet(
-            UriTemplate = "/books/{id}/xml",
+            UriTemplate = "/xml/books/{id}",
             ResponseFormat = WebMessageFormat.Xml)]
         BookEntity getByIdXML(string id);
 
         [OperationContract]
         [WebInvoke(
-            UriTemplate = "/books/{id}",
+            UriTemplate = "/json/books/{id}",
             Method = "PUT",
             ResponseFormat = WebMessageFormat.Json)]
         string update(string id, BookEntity book);
 
         [OperationContract]
         [WebInvoke(
-        UriTemplate = "/books/{id}/xml",
+        UriTemplate = "/xml/books/{id}",
         Method = "PUT",
         ResponseFormat = WebMessageFormat.Xml)]
         string updateXML(string id, BookEntity book);
